@@ -327,17 +327,16 @@
           <div class="file-details">
             <div class="file-detail">
               <strong>File Name:</strong>
-              <span id="fileName">health_centre_data_2500_raw.xlsx</span>
+              <span>health_centre_data_2500_raw.xlsx</span>
             </div>
             <div class="file-detail">
               <strong>File Size:</strong>
               <span id="fileSize">Calculating...</span>
             </div>
-          <div class="file-detail">
-  <strong>Last Updated:</strong>
-  <span id="lastUpdated">November 10, 2023 at 05:00 PM</span>
-</div>
-
+            <div class="file-detail">
+              <strong>Last Updated:</strong>
+              <span>November 10, 2023 at 05:00 PM</span>
+            </div>
             <div class="file-detail">
               <strong>Format:</strong>
               <span>Microsoft Excel (.xlsx)</span>
@@ -414,26 +413,12 @@
       day: 'numeric'
     });
 
-    // Try to get file information
+    // Only calculate file size dynamically, not last updated date
     (async function() {
       try {
         const response = await fetch('health_centre_data_2500_raw.xlsx', { method: 'HEAD' });
         if (response.ok) {
-          const lastModified = response.headers.get('Last-Modified');
           const contentLength = response.headers.get('Content-Length');
-          
-          if (lastModified) {
-            document.getElementById('lastUpdated').textContent = new Date(lastModified).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long', 
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit'
-            });
-          } else {
-            document.getElementById('lastUpdated').textContent = 'Information not available';
-          }
-          
           if (contentLength) {
             const sizeKB = Math.round(contentLength / 1024);
             const sizeMB = (contentLength / (1024 * 1024)).toFixed(2);
@@ -442,14 +427,13 @@
             document.getElementById('fileSize').textContent = 'Size not available';
           }
         } else {
-          document.getElementById('lastUpdated').textContent = 'File not accessible';
           document.getElementById('fileSize').textContent = 'Unknown';
         }
       } catch (error) {
-        document.getElementById('lastUpdated').textContent = 'Unable to determine';
         document.getElementById('fileSize').textContent = 'Unknown';
       }
     })();
   </script>
 </body>
 </html>
+
