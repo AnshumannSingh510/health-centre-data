@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Public Data — Health Centre Dataset</title>
+  <style>
+    :root{--bg:#f7f9fb;--card:#fff;--accent:#0b5ed7;--muted:#6b7280}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:var(--bg);color:#0b1a2b}
+    .gov-header{background:#08306B;color:#fff;padding:28px 20px;display:flex;align-items:center;gap:16px}
+    .shield{width:64px;height:64px;border-radius:8px;background:linear-gradient(180deg,#0b5ed7,#073b9a);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+    .brand{font-size:20px;font-weight:700}
+    .gov-sub{font-size:13px;color:rgba(255,255,255,0.9)}
+    main{max-width:900px;margin:28px auto;padding:24px}
+    .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(12,36,80,0.06)}
+    h1{margin:0 0 8px;font-size:22px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .download-row{display:flex;gap:18px;align-items:center}
+    .btn-download{background:var(--accent);color:#fff;padding:14px 20px;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 6px 12px rgba(11,94,215,0.18)}
+    .meta{font-size:13px;color:var(--muted)}
+    footer{max-width:900px;margin:18px auto;padding:12px 24px;color:var(--muted);font-size:13px}
+    .notice{background:#fffbea;border-left:4px solid #f59e0b;padding:12px;border-radius:8px;margin-top:16px}
+    @media(max-width:600px){.download-row{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <header class="gov-header" role="banner">
+    <div class="shield" aria-hidden="true">📊</div>
+    <div>
+      <div class="brand">Public Data Portal</div>
+      <div class="gov-sub">Health Centre Dataset (Demo Hosting)</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="downloadTitle">
+      <h1 id="downloadTitle">Download Health Centre Dataset (Excel)</h1>
+      <p class="lead">Click the button below to download the Excel dataset.</p>
+
+      <div class="download-row">
+        <a id="dlBtn" class="btn-download" href="health_centre_data_2500_raw.xlsx" download>Download dataset (Excel)</a>
+        <div class="meta">
+          <div>File: <strong>health_centre_data_2500_raw.xlsx</strong></div>
+        </div>
+      </div>
+
+      <div class="notice" role="note">
+        <strong>Note:</strong> This is a demonstration of a public data download page. Host it on Vercel to make it accessible online.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Hosted with ❤️ using Vercel. This is a template for sharing datasets safely.
+  </footer>
+</body>
+</html>
